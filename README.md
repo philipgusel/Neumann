@@ -22,5 +22,13 @@ test = [("dld",30),
 reg = run test
 
 -- run returns the state of all registers
+
+-- run from file:
+
+-- example 1: safe division
+dofile "neumann_test1"
+
+-- example 2: calculate fibonacci numbers
+dofile "neumann_test2"
        
 ```
