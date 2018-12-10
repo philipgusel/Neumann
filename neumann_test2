@@ -1,0 +1,41 @@
+; fib
+dld 0
+sto 1
+; a
+dld 1
+sto 2
+; b
+dld 0
+sto 3
+; n-th fib number
+dld 10
+sto 4
+; loop
+ld 4
+; jump on R4 = 0
+jeq 23
+; set b = a
+ld 2
+sto 3
+; set a = fib
+ld 1
+sto 2
+; do fib = a + b
+ld 2
+add 3
+sto 1
+; update loop
+dld 1
+; abuse b register while unneeded 
+sto 3
+; load counter
+ld 4
+; subtract 1
+sub 3
+sto 4
+; jump to loop start
+jmp 8
+; load retrun value
+ld 1
+end 0
+
