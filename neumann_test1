@@ -1,4 +1,3 @@
-;; hasm example 1
 ;; safe division
 ; zähler speichen
 dld 100
