@@ -1,7 +1,7 @@
 # Neumann
 Library for Simulating a simple Neumann-architecture
 
-´´´haskell
+```haskell
 -- assembly programm for safe division with error value -1
 test = [("dld",30),
         ("sto",1),
@@ -23,4 +23,4 @@ reg = run test
 
 -- run returns the state of all registers
        
-´´´
+```
