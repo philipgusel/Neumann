@@ -1,0 +1,27 @@
+;; HASM - Hello World!
+dld 72
+io 0
+dld 101
+io 0
+dld 108
+io 0
+io 0
+dld 111
+io 0
+dld 32
+io 0
+dld 87
+io 0
+dld 111
+io 0
+dld 114
+io 0
+dld 108
+io 0
+dld 100
+io 0
+dld 33
+io 0
+dld 10
+io 0
+end
