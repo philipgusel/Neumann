@@ -1,0 +1,51 @@
+; register 1 as store of calculated fib numbers
+dl 0
+st 1
+; helper value a
+dl 1
+st 2
+; helper value b
+dl 0
+st 3
+; loop counter
+dl 2000
+st 4
+
+;; loop
+
+; load counter for loop condition
+ld 4
+; end on r4 = 0
+je 23
+; load a, do b = a
+ld 2
+st 3
+; do a = fib
+ld 1
+st 2
+; do fib =  a + b
+ld 2
+a 3
+st 1
+; use b register (currently unneded) as store for 1
+dl 1
+st 3
+; decrease loop counter by 1
+ld 4
+sub 3
+st 4
+; go back to condition checking
+j 8
+
+;; after loop
+
+; print return value
+ld 1
+io 1
+
+; print mem map
+; print \n
+dl 10
+io 0
+; end
+e
