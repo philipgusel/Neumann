@@ -93,8 +93,6 @@ runrecur ((i,a,r1,r2,r3,r4,t,io,mem), l)
         | otherwise = runrecur ((doinstruction (i,a,r1,r2,r3,r4,t,io,mem) (l `at` i)), l)
 
 doinstruction (i,a,r1,r2,r3,r4,t,io,mem) (s,p)
--- short instructions
-
         | s == "e" = (i,a,r1,r2,r3,r4,-1,io,mem)
         | s == "n" = ((i+1),a,r1,r2,r3,r4,t,io,mem)
         | s == "ld" && p == 1 = ((i+1),r1,r1,r2,r3,r4,t,io,mem)
@@ -131,7 +129,7 @@ doinstruction (i,a,r1,r2,r3,r4,t,io,mem) (s,p)
         | s == "je" && a /= 0 = ((i+1),a,r1,r2,r3,r4,t,io,mem)
         | s == "jn" && a /= 0 = (p,a,r1,r2,r3,r4,t,io,mem)
         | s == "jn" && a == 0 = ((i+1),a,r1,r2,r3,r4,t,io,mem)
--- extras
+        
         | s == "st" && p == 0 = (a,a,r1,r2,r3,r4,t,io,mem)
         | s == "ld" && p == 0 = (i,i,r1,r2,r3,r4,t,io,mem)
 -- IO
