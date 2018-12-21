@@ -3,32 +3,30 @@ Library for Simulating a simple Neumann-architecture
 
 ```haskell
 -- assembly programm for safe division with error value -1
-test = [("dld",30),
-        ("sto",1),
-        ("dld",3),
-        ("sto",2),
-        ("dld", -1),
-        ("sto", 3),
+test = [("dl",30),
+        ("st",1),
+        ("dl",3),
+        ("st",2),
+        ("dl", -1),
+        ("st", 3),
         ("ld", 2),
-        ("jeq", 11),
+        ("je", 11),
         ("ld", 1),
         ("div", 2),
-        ("sto", 3),
+        ("st", 3),
         ("ld", 3),
-        ("end", 1)]
+        ("e", 1)]
 
 -- run it:
 
 reg = run test
 
--- run returns the state of all registers
-
 -- run from file:
 
--- example 1: safe division
-dofile "neumann_test1"
+-- with debug info
 
--- example 2: calculate fibonacci numbers
-dofile "neumann_test2"
-       
-```
+dofile "file"
+
+-- without debug info
+
+dofilenores "file"
